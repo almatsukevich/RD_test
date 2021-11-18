@@ -43,7 +43,10 @@ class Employee(models.Model):
     def __str__(self) ->str:
         return str(f"{self.position.name} - {self.name}")
 
-
+    def add(self):
+        for i in self.pk:
+            self.objects.get(pk=i).payd_salary += self.objects.get(pk=i).salary
+        return 
 
     class Meta:
         verbose_name = "Сотрудник"
